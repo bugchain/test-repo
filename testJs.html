@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- javascript interface name : TohomeWebJS -->
+    <!-- callbcak function name : onReceived -->
+
+        <h1 id="h1">Test Javascript Interface Callback</h1>
+        <input type="button" value="On Failure" onClick="onFailure()" />
+        <input type="button" value="On Success" onClick="onSuccess()" />
+        <input type="button" value="On Show Modal" onClick="onShowModal()" />
+        <input type="button" value="On Hide Modal" onClick="onHideModal()" />
+ 
+
+    
+    <script type="text/javascript">
+
+            function onSuccess() {
+                TohomeWebJS.onReceived("{\"payment_status\":\"successfuly\"}");
+            }
+            function onFailure() {
+                TohomeWebJS.onReceived("{\"payment_status\":\"failure\"}");
+            }
+            function onShowModal() {
+                TohomeWebJS.onReceived("{\"is_kpayment_modal_show\":true}");
+            }
+            function onHideModal() {
+                TohomeWebJS.onReceived("{\"is_kpayment_modal_show\":false}");
+            }
+        </script>
+    
+</body>
+
+
+</html>
